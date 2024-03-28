@@ -58,7 +58,7 @@ func process_action(action, object = null):
 
 	# If the current room is empty then start with the initial room.
 	if currentRoom == null:
-		currentRoom = 'room1'
+		currentRoom = 'startmenu'
 		return render_room(rooms[currentRoom])
 
 	# React to the look command.
@@ -109,9 +109,9 @@ func render_room(room):
 			if inventory.has(item) == false:
 				renderedRoom += room['items'][item]['description'] + "\n"
 
-	renderedRoom += "\nВозможные варианты\n"
+	renderedRoom += "\nВозможные варианты:\n\n"
 
 	for exit in room['exits']:
-		renderedRoom += "- " + room['exits'][exit]['description'] + "\n"
+		renderedRoom += ". " + room['exits'][exit]['description'] + "\n"
 	return renderedRoom
 

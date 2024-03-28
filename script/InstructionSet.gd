@@ -4,6 +4,8 @@ const NOT_FOUND = "not_found"
 
 const HELP = "help"
 
+const START = "start"
+
 const RESET = "reset"
 
 const QUIT = "quit"

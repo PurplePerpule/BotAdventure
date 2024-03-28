@@ -1,25 +1,27 @@
 {
-	"room1": {
-		"intro" : "Укажите с помощью команды, куда пойдет робот.",
-		"items" : {
-			"key123" : {
-				"description" : "На столе лежит ключ",
-				"type" : "key",
-				"opens" : "вниз",
-				"name" : "ключ"
-			}
-		},
+	"startmenu": {
+		"intro" : "-------------------------------- ГЛАВНОЕ МЕНЮ --------------------------------",
 		"exits" : {
-			"down" : {
-				"description" : "Вниз",
+			"start" : {
+				"description" : "\n                                     Start",
+				"destination" : "room1",
+			},
+			"up" : {
+				"description" : "\n                                    Settings",
 				"destination" : "room2",
-				"locked" : true,
-				"key" : "key123"
+			},
+			"help" : {
+				"description" : "\n                                      Help",
+				"destination" : "room2",
+			},
+			"exit" : {
+				"description" : "\n                                      Exit",
+				"destination" : "room2",
 			},
 		}
 	},
-	"room2": {
-		"intro" : "Робот: Успешно спустился вниз.",
+	"room1": {
+		"intro" : "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nПриветствую вас в BotAdventure. В этой игре вы научитесь базовым аспектам программирования, но это не точно. И так, перейдем к обучению или сразу в бой?! ",
 		"exits" : {
 			"up" : {
 				"description" : "Вверх",

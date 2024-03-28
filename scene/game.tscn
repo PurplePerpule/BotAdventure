@@ -19,7 +19,7 @@ offset_right = 785.0
 offset_bottom = 415.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(472, 242)
+position = Vector2(440, 232)
 ignore_rotation = false
 
 [node name="ComputerForPurple" type="Sprite2D" parent="."]
