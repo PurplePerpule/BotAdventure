@@ -1,0 +1,30 @@
+{
+	"room1": {
+		"intro" : "Укажите с помощью команды, куда пойдет робот.",
+		"items" : {
+			"key123" : {
+				"description" : "На столе лежит ключ",
+				"type" : "key",
+				"opens" : "вниз",
+				"name" : "ключ"
+			}
+		},
+		"exits" : {
+			"down" : {
+				"description" : "Вниз",
+				"destination" : "room2",
+				"locked" : true,
+				"key" : "key123"
+			},
+		}
+	},
+	"room2": {
+		"intro" : "Робот: Успешно спустился вниз.",
+		"exits" : {
+			"up" : {
+				"description" : "Вверх",
+				"destination" : "room1"
+			}
+		}
+	},
+}

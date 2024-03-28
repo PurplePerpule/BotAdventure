@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://o8shh7crkkv6"]
+
+[ext_resource type="PackedScene" uid="uid://dy3qennxgfccw" path="res://scene/control.tscn" id="1_tro3t"]
+[ext_resource type="Texture2D" uid="uid://c34dj2ruf0ioj" path="res://graphics/computer_for_purple.png" id="2_0wfjh"]
+
+[node name="game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -787.0
+offset_top = -320.0
+offset_right = 1552.0
+offset_bottom = 1120.0
+color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[node name="Control" parent="." instance=ExtResource("1_tro3t")]
+offset_left = 279.0
+offset_top = 13.0
+offset_right = 785.0
+offset_bottom = 415.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(472, 242)
+ignore_rotation = false
+
+[node name="ComputerForPurple" type="Sprite2D" parent="."]
+position = Vector2(436, 404)
+scale = Vector2(3, 3)
+texture = ExtResource("2_0wfjh")
