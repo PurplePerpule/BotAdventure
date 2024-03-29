@@ -1,6 +1,3 @@
 res://scene/game.tscn
 res://scene/control.tscn
 res://data/game1.json
-res://script/GameDataProcessor.gd
-res://script/InstructionSet.gd
-res://script/TextParser.gd

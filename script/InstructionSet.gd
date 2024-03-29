@@ -6,6 +6,8 @@ const HELP = "help"
 
 const START = "start"
 
+const SETTINGS = 'settings'
+
 const RESET = "reset"
 
 const QUIT = "quit"

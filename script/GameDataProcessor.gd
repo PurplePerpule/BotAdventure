@@ -37,11 +37,13 @@ func process_action(action, object = null):
 	if action == InstructionSet.HELP:
 		var helpText = ''
 		helpText += 'Помощь:' + "\n"
-		helpText += '- Use "look" around the room you are in.' + "\n"
-		helpText += '- Use "north", "south", "east", "west" to move in that direction.' + "\n"
-		helpText += '- Use "open" or "close" to interact with doors.' + "\n"
-		helpText += '- Use "get <object>" pick up objects.' + "\n"
-		helpText += '- Use "reset" to reset the game, or "exit" to quit.' + "\n"
+		helpText += '- Охуеть, помощь ему еще нужна, а может нахуй пойти, а?' + "\n"
+		helpText += '- Ну ладно, стрелочка -> это передвижение камеры налево, ну типа лол. Там робот.' + "\n"
+		helpText += '- Чтобы роботом управлять, команды нужно писать.' + "\n"
+		helpText += '- Робот будет говорить тебе, что именно он видит, а ты должен вслепую находить выход из лабиринта, понял, да?' + "\n"
+		helpText += '- Давай, короче, больше не пиши сюда, удачи!' + "\n"
+		helpText += '- P.s. В любой не понятной ситуации нажимай "CTRL + C".' + "\n"
+		helpText += '- P.s. Шутка, пиши в строку "reset".' + "\n"
 		return helpText
 
 	# React to the reset command.

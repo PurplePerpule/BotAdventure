@@ -3,21 +3,30 @@
 		"intro" : "-------------------------------- ГЛАВНОЕ МЕНЮ --------------------------------",
 		"exits" : {
 			"start" : {
-				"description" : "\n                                     Start",
+				"description" : " Start",
 				"destination" : "room1",
 			},
-			"up" : {
-				"description" : "\n                                    Settings",
-				"destination" : "room2",
+			"settings" : {
+				"description" : " Settings",
+				"destination" : "settings",
 			},
 			"help" : {
-				"description" : "\n                                      Help",
+				"description" : " Help",
 				"destination" : "room2",
 			},
 			"exit" : {
-				"description" : "\n                                      Exit",
+				"description" : " Exit",
 				"destination" : "room2",
 			},
+		}
+	},
+	"settings": {
+		"intro" : "--------------------------------- НАСТРОЙКИ ---------------------------------",
+		"exits" : {
+			"up" : {
+				"description" : "Вверх",
+				"destination" : "room1"
+			}
 		}
 	},
 	"room1": {

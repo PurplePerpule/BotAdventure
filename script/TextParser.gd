@@ -7,6 +7,8 @@ var object = null
 # Parse a given input string into an instruction.
 func parse(text):
 	match text:
+		'settings':
+			return InstructionSet.SETTINGS
 		'start':
 			return InstructionSet.START
 		'Start':
