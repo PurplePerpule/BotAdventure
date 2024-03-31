@@ -16,6 +16,8 @@ const LOOK = "look"
 
 const DOWN = "down"
 
+const MOVE_DOWN = "move_down"
+
 const UP = "up"
 
 const LEFT = "left"

@@ -1,3 +1,4 @@
 res://scene/game.tscn
 res://scene/control.tscn
-res://data/game1.json
+res://scene/robot.tscn
+res://scene/game.gd

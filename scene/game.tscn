@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://o8shh7crkkv6"]
+[gd_scene load_steps=8 format=3 uid="uid://o8shh7crkkv6"]
 
+[ext_resource type="Script" path="res://scene/game.gd" id="1_pxe13"]
 [ext_resource type="PackedScene" uid="uid://dy3qennxgfccw" path="res://scene/control.tscn" id="1_tro3t"]
 [ext_resource type="Texture2D" uid="uid://c34dj2ruf0ioj" path="res://graphics/computer_for_purple.png" id="2_0wfjh"]
 [ext_resource type="Script" path="res://script/Camera2D.gd" id="2_j0156"]
+[ext_resource type="Texture2D" uid="uid://x2pycpyyfjwx" path="res://graphics/secondcomputer_for_purple.png" id="4_3edaw"]
+[ext_resource type="PackedScene" uid="uid://d80anovd5nsu" path="res://scene/robot.tscn" id="5_e0eyj"]
+[ext_resource type="Texture2D" uid="uid://dbld3cxm0sjv3" path="res://graphics/mainpick.png" id="6_25auy"]
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_pxe13")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1512.0
@@ -14,7 +19,7 @@ offset_bottom = 1826.0
 color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(412, 324)
+position = Vector2(424, 186)
 limit_right = 2720
 script = ExtResource("2_j0156")
 
@@ -28,3 +33,22 @@ offset_bottom = 415.0
 position = Vector2(436, 404)
 scale = Vector2(3, 3)
 texture = ExtResource("2_0wfjh")
+
+[node name="igrok" type="Node2D" parent="."]
+
+[node name="SecondcomputerForPurple" type="Sprite2D" parent="igrok"]
+position = Vector2(1904, 298)
+scale = Vector2(3.7, 3.7)
+texture = ExtResource("4_3edaw")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_e0eyj")]
+position = Vector2(1451, 509)
+motion_mode = 1
+script = null
+
+[node name="walls" type="Node2D" parent="."]
+
+[node name="Mainpick" type="Sprite2D" parent="."]
+position = Vector2(1901, 141)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_25auy")

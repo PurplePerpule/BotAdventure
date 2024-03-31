@@ -2,6 +2,7 @@ class_name GameDataProcessor
 
 var InstructionSet = load("res://script/InstructionSet.gd")
 
+
 var rooms
 var currentRoom = null
 var inventory = {}
@@ -29,6 +30,10 @@ func loadJsonData(fileName):
 
 func process_action(action, object = null):
 	# React to the help command.
+	if action == InstructionSet.MOVE_DOWN:
+		var robot = ''
+		robot += ' '
+		return robot
 	if action == InstructionSet.FANSHI:
 		var fantext = ''
 		fantext += 'Да, это верно!' + "\n"

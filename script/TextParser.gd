@@ -7,6 +7,8 @@ var object = null
 # Parse a given input string into an instruction.
 func parse(text):
 	match text:
+		'movedown':
+			return InstructionSet.MOVE_DOWN
 		'settings':
 			return InstructionSet.SETTINGS
 		'start':
@@ -42,6 +44,8 @@ func parse(text):
 			return InstructionSet.QUIT
 		'fanshi лучший?':
 			return InstructionSet.FANSHI
+			
+	
 			
 	if text.begins_with('get '):
 		var regex = RegEx.new()

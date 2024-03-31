@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d80anovd5nsu"]
+
+[ext_resource type="Texture2D" uid="uid://c1gsb0vqmpbec" path="res://graphics/robot_for_purp.png" id="1_nhdvw"]
+[ext_resource type="Script" path="res://scene/robotmovement.gd" id="1_r3qt4"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_r3qt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_nhdvw")
