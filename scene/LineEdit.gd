@@ -2,10 +2,10 @@ extends LineEdit
 
 const TextParser = preload("res://script/TextParser.gd")
 const GameDataProcessor = preload("res://script/GameDataProcessor.gd")
-const Game = preload("res://scene/game.gd")
+
 
 var gameText: RichTextLabel
-var game = null
+var robot_move = null
 var text_parser = null
 var game_data_processor = null
 
@@ -14,7 +14,6 @@ func _ready():
 	gameText = get_parent().get_parent().get_node("GameText")
 	text_parser = TextParser.new()
 	game_data_processor = GameDataProcessor.new()
-	game = Game.new()
 	gameText.append_text(game_data_processor.process_action('') + "\n")
 	self.grab_focus()
 
@@ -32,7 +31,6 @@ func _on_text_submitted(new_text):
 	var output_text = ''
 	output_text += " > " + new_text + "\n\n"
 	output_text += game_data_processor.process_action(instruction, text_parser.get_object())
-	output_text += game.process_action(instruction, text_parser.get_object())
 	output_text += "\n"
 
 	# pass output to the game text area

@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameData="*res://script/GameDataProcessor.gd"
-Game="*res://scene/game.gd"
 
 [display]
 

@@ -8,7 +8,5 @@ var InstructionSet = load("res://script/InstructionSet.gd")
 var action
 
 func process_action(action, object = null):
-	# React to the help command.
-
-pass
+	pass
 

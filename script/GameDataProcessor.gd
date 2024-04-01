@@ -1,3 +1,5 @@
+extends Node2D
+
 class_name GameDataProcessor
 
 var InstructionSet = load("res://script/InstructionSet.gd")
