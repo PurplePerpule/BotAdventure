@@ -34,6 +34,7 @@ func process_action(action, object = null):
 	# React to the help command.
 	if action == InstructionSet.MOVE_DOWN:
 		var robot = ''
+		Global.RobotMoveDown = true
 		robot += ' '
 		return robot
 	if action == InstructionSet.FANSHI:

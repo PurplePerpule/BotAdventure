@@ -36,6 +36,8 @@ func parse(text):
 			return InstructionSet.LOOK
 		'help':
 			return InstructionSet.HELP
+		'Help':
+			return InstructionSet.HELP
 		'reset':
 			return InstructionSet.RESET
 		'quit':

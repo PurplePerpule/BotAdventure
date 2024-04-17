@@ -1,5 +1,7 @@
 res://scene/game.tscn
 res://scene/control.tscn
 res://scene/robot.tscn
-res://scene/LineEdit.gd
+res://script/TextParser.gd
+res://script/Global.gd
+res://scene/robotmovement.gd
 res://script/GameDataProcessor.gd

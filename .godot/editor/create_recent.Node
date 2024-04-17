@@ -1,4 +1,5 @@
+CollisionShape2D
+Node3D
 CharacterBody2D
 Node2D
-CollisionShape2D
 Sprite2D
