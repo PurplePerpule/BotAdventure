@@ -18,7 +18,13 @@ const DOWN = "down"
 
 const MOVE_DOWN = "move_down"
 
-const UP = "up"
+const MOVE_UP = "move_up"
+
+const MOVE_RIGHT = "move_right"
+
+const MOVE_LEFT = "move_left"
+
+const NEXT = "next"
 
 const LEFT = "left"
 

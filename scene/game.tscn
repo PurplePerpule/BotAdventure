@@ -1,12 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://o8shh7crkkv6"]
+[gd_scene load_steps=19 format=3 uid="uid://o8shh7crkkv6"]
 
 [ext_resource type="PackedScene" uid="uid://dy3qennxgfccw" path="res://scene/control.tscn" id="1_tro3t"]
 [ext_resource type="Texture2D" uid="uid://c34dj2ruf0ioj" path="res://graphics/computer_for_purple.png" id="2_0wfjh"]
 [ext_resource type="Script" path="res://script/Camera2D.gd" id="2_j0156"]
 [ext_resource type="Texture2D" uid="uid://x2pycpyyfjwx" path="res://graphics/secondcomputer_for_purple.png" id="4_3edaw"]
 [ext_resource type="PackedScene" uid="uid://d80anovd5nsu" path="res://scene/robot.tscn" id="5_e0eyj"]
+[ext_resource type="Script" path="res://script/RightWallsZone.gd" id="5_hc62i"]
 [ext_resource type="Texture2D" uid="uid://dbld3cxm0sjv3" path="res://graphics/mainpick.png" id="6_25auy"]
+[ext_resource type="Script" path="res://script/UpWallZone.gd" id="6_q3wbs"]
+[ext_resource type="Script" path="res://script/DownWall.gd" id="7_0w3qa"]
 [ext_resource type="Texture2D" uid="uid://c1gsb0vqmpbec" path="res://graphics/robot_for_purp.png" id="7_w2adc"]
+[ext_resource type="Script" path="res://script/LeftWallsZone.gd" id="8_jf0wj"]
+[ext_resource type="Texture2D" uid="uid://4jum54jtsbey" path="res://graphics/walls.png" id="9_f0aci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebhkq"]
+size = Vector2(40, 817.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqoxt"]
+size = Vector2(40, 1043.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ejqh"]
+size = Vector2(7, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7em6m"]
+size = Vector2(6, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gxkt"]
+size = Vector2(6, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a52d1"]
+size = Vector2(7, 356)
 
 [node name="game" type="Node2D"]
 
@@ -41,6 +64,145 @@ scale = Vector2(3.7, 3.7)
 texture = ExtResource("4_3edaw")
 
 [node name="walls" type="Node2D" parent="."]
+position = Vector2(1468, 182)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(-65, -19)
+shape = SubResource("RectangleShape2D_ebhkq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(939, -27)
+shape = SubResource("RectangleShape2D_ebhkq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(435.125, -447)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_oqoxt")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(435, 394)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_oqoxt")
+
+[node name="Wallss zone" type="Node2D" parent="walls"]
+
+[node name="RightWall" type="Area2D" parent="walls/Wallss zone"]
+position = Vector2(60, -3)
+script = ExtResource("5_hc62i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Wallss zone/RightWall"]
+position = Vector2(-1.5, 213.5)
+shape = SubResource("RectangleShape2D_8ejqh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/Wallss zone/RightWall"]
+position = Vector2(-1, -63)
+shape = SubResource("RectangleShape2D_8ejqh")
+
+[node name="UpWall" type="Area2D" parent="walls/Wallss zone"]
+position = Vector2(20, -100)
+rotation = 1.5708
+script = ExtResource("6_q3wbs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Wallss zone/UpWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_7em6m")
+
+[node name="DownWall" type="Area2D" parent="walls/Wallss zone"]
+position = Vector2(30, 322)
+rotation = 1.5708
+script = ExtResource("7_0w3qa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Wallss zone/DownWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_5gxkt")
+
+[node name="LeftWall" type="Area2D" parent="walls/Wallss zone"]
+script = ExtResource("8_jf0wj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/Wallss zone/LeftWall"]
+position = Vector2(-5.5, 146)
+shape = SubResource("RectangleShape2D_a52d1")
+
+[node name="Walls" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 293)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls10" type="Sprite2D" parent="walls"]
+position = Vector2(27, -13)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls13" type="Sprite2D" parent="walls"]
+position = Vector2(26, 322)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls14" type="Sprite2D" parent="walls"]
+position = Vector2(88, 45)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls15" type="Sprite2D" parent="walls"]
+position = Vector2(88, 99)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls2" type="Sprite2D" parent="walls"]
+position = Vector2(60, 293)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls3" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 237)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls4" type="Sprite2D" parent="walls"]
+position = Vector2(60, 237)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls5" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 181)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls6" type="Sprite2D" parent="walls"]
+position = Vector2(60, 181)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls7" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 126)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls8" type="Sprite2D" parent="walls"]
+position = Vector2(60, 126)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls9" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 71)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls11" type="Sprite2D" parent="walls"]
+position = Vector2(-4, 15)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
+
+[node name="Walls12" type="Sprite2D" parent="walls"]
+position = Vector2(60, 15)
+scale = Vector2(2, 2)
+texture = ExtResource("9_f0aci")
 
 [node name="Mainpick" type="Sprite2D" parent="."]
 position = Vector2(1901, 141)
@@ -53,4 +215,4 @@ scale = Vector2(3, 3)
 texture = ExtResource("7_w2adc")
 
 [node name="robot" parent="." instance=ExtResource("5_e0eyj")]
-position = Vector2(918, 290)
+position = Vector2(1496, 457)

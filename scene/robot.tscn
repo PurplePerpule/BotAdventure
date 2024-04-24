@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://d80anovd5nsu"]
+[gd_scene load_steps=9 format=3 uid="uid://d80anovd5nsu"]
 
 [ext_resource type="Texture2D" uid="uid://c1gsb0vqmpbec" path="res://graphics/robot_for_purp.png" id="1_nhdvw"]
 [ext_resource type="Script" path="res://scene/robotmovement.gd" id="1_r3qt4"]
+[ext_resource type="Script" path="res://script/RobotEmmit.gd" id="3_wk5d0"]
+[ext_resource type="Script" path="res://script/RobotEmmitDown.gd" id="4_xtx01"]
+[ext_resource type="Script" path="res://script/RobotEmmitLeft.gd" id="5_jyddn"]
+[ext_resource type="Script" path="res://script/RobotEmmitRight.gd" id="6_j5wpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc4e5"]
-size = Vector2(20, 45)
+size = Vector2(20, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gramf"]
+size = Vector2(26, 5)
 
 [node name="robot" type="CharacterBody2D"]
 script = ExtResource("1_r3qt4")
@@ -14,5 +21,44 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_nhdvw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 7.5)
+position = Vector2(-1, 5.5)
 shape = SubResource("RectangleShape2D_yc4e5")
+
+[node name="RobotEmmitUp" type="Area2D" parent="."]
+script = ExtResource("3_wk5d0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RobotEmmitUp"]
+position = Vector2(-1, -17)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gramf")
+
+[node name="RobotEmmitDown" type="Area2D" parent="."]
+script = ExtResource("4_xtx01")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RobotEmmitDown"]
+position = Vector2(-1, 28)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gramf")
+
+[node name="RobotEmmitLeft" type="Area2D" parent="."]
+script = ExtResource("5_jyddn")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RobotEmmitLeft"]
+position = Vector2(-24, 6)
+shape = SubResource("RectangleShape2D_gramf")
+
+[node name="RobotEmmitRight" type="Area2D" parent="."]
+script = ExtResource("6_j5wpb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RobotEmmitRight"]
+position = Vector2(22, 6)
+shape = SubResource("RectangleShape2D_gramf")
+
+[connection signal="area_entered" from="RobotEmmitUp" to="RobotEmmitUp" method="_on_area_entered"]
+[connection signal="area_exited" from="RobotEmmitUp" to="RobotEmmitUp" method="_on_area_exited"]
+[connection signal="area_entered" from="RobotEmmitDown" to="RobotEmmitDown" method="_on_area_entered"]
+[connection signal="area_exited" from="RobotEmmitDown" to="RobotEmmitDown" method="_on_area_exited"]
+[connection signal="area_entered" from="RobotEmmitLeft" to="RobotEmmitLeft" method="_on_area_entered"]
+[connection signal="area_exited" from="RobotEmmitLeft" to="RobotEmmitLeft" method="_on_area_exited"]
+[connection signal="area_entered" from="RobotEmmitRight" to="RobotEmmitRight" method="_on_area_entered"]
+[connection signal="area_exited" from="RobotEmmitRight" to="RobotEmmitRight" method="_on_area_exited"]

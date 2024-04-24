@@ -7,8 +7,14 @@ var object = null
 # Parse a given input string into an instruction.
 func parse(text):
 	match text:
-		'movedown':
+		'Move.Down':
 			return InstructionSet.MOVE_DOWN
+		'Move.Up':
+			return InstructionSet.MOVE_UP
+		'Move.Right':
+			return InstructionSet.MOVE_RIGHT
+		'Move.Left':
+			return InstructionSet.MOVE_LEFT
 		'settings':
 			return InstructionSet.SETTINGS
 		'start':
@@ -19,10 +25,10 @@ func parse(text):
 			return InstructionSet.DOWN
 		'down':
 			return InstructionSet.DOWN
-		'Up':
-			return InstructionSet.UP
-		'up':
-			return InstructionSet.UP
+		'Next':
+			return InstructionSet.NEXT
+		'next':
+			return InstructionSet.NEXT
 		'Left':
 			return InstructionSet.LEFT
 		'left':

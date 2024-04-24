@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://vqgu0525obr5"]
+
+[ext_resource type="Texture2D" uid="uid://4jum54jtsbey" path="res://graphics/walls.png" id="1_4idvh"]
+[ext_resource type="Script" path="res://script/RightWallsZone.gd" id="1_euj7u"]
+[ext_resource type="Script" path="res://script/LeftWallsZone.gd" id="1_mxcu0"]
+[ext_resource type="Script" path="res://script/UpWallZone.gd" id="3_6kook"]
+[ext_resource type="Script" path="res://script/DownWall.gd" id="4_nv8n1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m6t4"]
+size = Vector2(6, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpv6q"]
+size = Vector2(6, 64)
+
+[node name="walls" type="Node2D"]
+
+[node name="LeftWall" type="Area2D" parent="."]
+script = ExtResource("1_mxcu0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_4m6t4")
+
+[node name="RightWall" type="Area2D" parent="."]
+script = ExtResource("1_euj7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_4m6t4")
+
+[node name="UpWall" type="Area2D" parent="."]
+script = ExtResource("3_6kook")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_4m6t4")
+
+[node name="DownWall" type="Area2D" parent="."]
+script = ExtResource("4_nv8n1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownWall"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_4m6t4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_qpv6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_4idvh")

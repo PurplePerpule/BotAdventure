@@ -35,7 +35,30 @@ func process_action(action, object = null):
 	if action == InstructionSet.MOVE_DOWN:
 		var robot = ''
 		Global.RobotMoveDown = true
-		robot += ' '
+		robot += 'Бот пошел вниз'
+		return robot
+	if action == InstructionSet.MOVE_UP:
+		var robot = ''
+		if Global.UpWalls == false:
+			Global.RobotMoveUp = true
+			robot += 'Бот пошел вверх '
+		else:
+			robot += 'Бот: Обнаружена стена!'
+			
+		return robot
+	if action == InstructionSet.MOVE_LEFT:
+		var robot = ''
+		if Global.LeftWalls == false:
+			Global.RobotMoveLeft = true
+			robot += 'Бот пошел Лево'
+		else:
+			robot += 'Бот: Обнаружена стена!'
+			
+		return robot
+	if action == InstructionSet.MOVE_RIGHT:
+		var robot = ''
+		Global.RobotMoveRight = true
+		robot += 'Бот пошел право'
 		return robot
 	if action == InstructionSet.FANSHI:
 		var fantext = ''
@@ -45,7 +68,7 @@ func process_action(action, object = null):
 	if action == InstructionSet.HELP:
 		var helpText = ''
 		helpText += 'Помощь:' + "\n"
-		helpText += '- Охуеть, помощь ему еще нужна, а может нахуй пойти, а?' + "\n"
+		helpText += '- Помощь ему нужна, а может нет, а?' + "\n"
 		helpText += '- Ну ладно, стрелочка -> это передвижение камеры налево, ну типа лол. Там робот.' + "\n"
 		helpText += '- Чтобы роботом управлять, команды нужно писать.' + "\n"
 		helpText += '- Робот будет говорить тебе, что именно он видит, а ты должен вслепую находить выход из лабиринта, понял, да?' + "\n"
